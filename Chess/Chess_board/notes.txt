@@ -1,0 +1,48 @@
+board [ white_pos, black_pos, castling, active, ep]
+
+
+
+
+
+
+move encoding 24 bit word  -> 4 bits (captured piece) - 4 bits (moved piece)  6 bits (start square) - 6 bits (end square), 4 bits (move type)
+
+pieces
+b / w  royal  valuable  semi-valuable  
+0      1      0         1               black rook
+
+black 0
+white 1
+
+king    100    4
+queen   110    6
+rook    101    5
+bishop  011    3
+knight  010    2
+pawn    001    1
+nothing 000    0
+
+bp = 1001 = 1
+bk = 0010 = 2
+bb = 0011 = 3
+br = 0101 = 5
+bq = 0110 = 6
+bk = 0100 = 4
+
+move types:
+quiet moves             0000    0       %  a move which doesn't alter matarial
+double pawn push        0001    1       %
+king castle             0010    2       >
+queen castle            0011    3       >
+captures                0100    4       %
+ep-capture              0101    5       %
+knight-promotion        1000    8       %
+bishop-promotion        1001    9       %
+rook-promotion          1010    10      %
+queen-promotion         1011    11      % 
+knight-promo capture    1100    12      %
+bishop-promo capture    1101    13      %
+rook-promo capture      1110    14      %
+queen-promo capture     1111    15      %
+
+

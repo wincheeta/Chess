@@ -1,0 +1,7 @@
+takes in:
+
+position of all pieces - passed as a a list of 12 dfferent numbers representing the location of each piece
+list of all possible moves as number used previously
+castling rights, en_passent sqaure
+
+
